@@ -13,6 +13,14 @@ app.get("/", (req: any, res: any) => {
 
 app.use("/tweets", twitterRouter);
 
+app.use((err: any, req: any, res: any, next: any) => {
+  const statusCode = err.statusCode || 500;
+  console.error(err.message, err.stack);
+  res.status(statusCode).json({ message: err.message });
+
+  return;
+});
+
 // Start the server
 app.listen(port, () => {
   console.log(`Server is running on port ${port}`);

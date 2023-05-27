@@ -5,13 +5,17 @@ let twitterConfig: any;
   twitterConfig = await twitterConfigPromise();
 })();
 
-async function getTweetsForTicker(ticker: string) {
+async function getTweetsForTicker(ticker: string, cursor = "") {
   const searchParams = {
     words: ["$" + ticker],
     hashtags: [ticker],
   };
 
-  const response = await twitterConfig.tweets.getTweets(searchParams, 20);
+  const response = await twitterConfig.tweets.getTweets(
+    searchParams,
+    20,
+    cursor
+  );
   if (response.list.length) {
     return response;
   }
