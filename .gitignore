@@ -1,0 +1,46 @@
+# Ignore operating system files
+.DS_Store
+Thumbs.db
+
+# Ignore project-specific files and directories
+/node_modules/
+/dist/
+/build/
+/.env
+
+# Ignore editor and IDE files
+.idea/
+.vscode/
+*.sublime-*
+*.swp
+
+# Ignore compiled files and binaries
+*.class
+*.jar
+*.war
+*.ear
+*.exe
+*.dll
+*.so
+*.o
+
+# Ignore package manager directories
+/.npm/
+/yarn-error.log
+yarn.lock
+package-lock.json
+
+# Ignore logs and temporary files
+/log/
+/tmp/
+*.log
+
+# Ignore configuration files with sensitive information
+/.env.local
+/.env.development.local
+/.env.test.local
+/.env.production.local
+
+# Ignore backup files
+*~
+*.bak
